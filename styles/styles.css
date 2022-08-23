@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.grid-container {
+    width: 500px;
+    height: 500px;
+    display: grid;
+    gap: 0;
+}
