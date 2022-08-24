@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&display=swap');
+
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
+    margin: 0;    
+    min-height: 100vh;
+    display: grid;
+    place-content: center;  
+    font-family: 'DynaPuff', cursive;
+}
+
+.heading {
+    text-align: center;
 }
 
 .grid-container {
@@ -9,4 +17,5 @@ body {
     height: 500px;
     display: grid;
     gap: 0;
+    border: thin solid #A7BBC7;
 }
