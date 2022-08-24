@@ -19,3 +19,12 @@ body {
     gap: 0;
     border: thin solid #A7BBC7;
 }
+
+.brush-color {
+    padding: 0;
+    border-style: none;
+}
+
+.brush-color:hover {
+    filter: brightness(50%);
+}
