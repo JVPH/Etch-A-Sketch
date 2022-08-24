@@ -1,7 +1,14 @@
 const gridContainer = document.querySelector('.grid-container');
+const slider = document.querySelector('.grid-dimensions-slider');
+const sliderValue = document.querySelector('.slider-value');
+sliderValue.textContent = slider.value;
 
-function setGridDimensions(rows, columns){
-    for (let i = 0; i < rows*columns; i++) {
+slider.oninput = () => {
+    sliderValue.textContent = slider.value;
+}
+
+function setGridDimensions(size){
+    for (let i = 0; i < size*size; i++) {
         let element = document.createElement('div');
         element.classList.add('grid-element');
         element.setAttribute('style', 'border: thin solid #E1E5EA');
@@ -9,10 +16,9 @@ function setGridDimensions(rows, columns){
     }
 }
 
-setGridDimensions(16,16);
+setGridDimensions(16);
 
 gridContainer.setAttribute('style', 'grid-template-rows: repeat(16, 1fr); grid-template-columns: repeat(16, 1fr);');
-
 
 const gridElements = document.querySelector('.grid-container').children;
 
