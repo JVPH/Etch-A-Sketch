@@ -16,6 +16,28 @@ body {
     align-self: center;  
 }
 
+.main {  
+    display: grid;
+    place-content: center;
+    gap: 0 1.5rem;
+    grid-template-areas: 
+        'one two two';
+}
+
+.main:nth-child(1) {
+    grid-area: one;    
+}
+
+.main:nth-child(2) {
+    grid-area: two;
+}
+
+.settings {
+    width: 250px;
+    height: 500px;
+    background-color: #9CB4CC;
+}
+
 .grid-container {    
     width: 500px;
     height: 500px;
@@ -33,29 +55,7 @@ body {
     filter: brightness(50%);
 }
 
-.main {  
-    display: grid;
-    place-content: center;
-    gap: 0 1.5rem;
-    grid-template-areas: 
-        'one two two';
-}
-
-.main:nth-child(1) {
-    grid-area: one;    
-}
-
-.main:nth-child(2) {
-    grid-area: two;
-}
-
 .footer {
     text-align: center;
     align-self: center;    
-}
-
-.settings {
-    width: 250px;
-    height: 500px;
-    background-color: #9CB4CC;
 }
