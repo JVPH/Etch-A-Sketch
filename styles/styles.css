@@ -34,7 +34,7 @@ body {
 
 .settings {
     width: 250px;
-    height: 500px;    
+    height: 600px;    
     background-color: #9CB4CC;
     display: flex;
     flex-direction: column;
@@ -43,11 +43,15 @@ body {
 }
 
 .grid-container {    
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     display: grid;
     gap: 0;
     border: thin solid #A7BBC7;    
+}
+
+.grid-container div{
+    border: thin solid #E1E5EA;
 }
 
 .brush-color {
