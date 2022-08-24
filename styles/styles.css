@@ -34,8 +34,12 @@ body {
 
 .settings {
     width: 250px;
-    height: 500px;
+    height: 500px;    
     background-color: #9CB4CC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .grid-container {    
