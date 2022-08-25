@@ -1,39 +1,44 @@
-const gridContainer = document.querySelector('.grid-container');
-const slider = document.querySelector('.grid-dimensions-slider');
-const sliderValueText = document.querySelector('.slider-current-value');
+const gridContainerElement = document.querySelector('.grid-container');
+const sliderElement = document.querySelector('.grid-dimensions-slider');
+const sliderElementDisplayValue = document.querySelector('.slider-current-value');
 let gridElements = document.querySelector('.grid-container').children;
 const brushColorElement = document.querySelector('.brush-color');
 
-sliderValueText.textContent = `${slider.value*16}X${slider.value*16}`;
-setGridDimensions(slider.value*16);
-gridContainer.setAttribute('style', ` grid-template-columns: repeat(16, 1fr);`);
+// Set starting/default display
+sliderElementDisplayValue.textContent = `${sliderElement.value*16}X${sliderElement.value*16}`;
+
+fillGridContainer(sliderElement.value*16);
+
+gridContainerElement.setAttribute('style', ` grid-template-columns: repeat(16, 1fr);`);
+
 addEventListenerToChangeColorWhenHovered(brushColorElement.value);
+
+//------------------------------------
 
 brushColorElement.addEventListener('change', () => {
     addEventListenerToChangeColorWhenHovered(brushColorElement.value);
 });
 
-slider.addEventListener('change', () => {
-    setGridDimensions(slider.value*16);
+sliderElement.addEventListener('change', () => {
+    fillGridContainer(sliderElement.value*16);
     setGridLayout();    
-    gridElements = document.querySelector('.grid-container').children;
     addEventListenerToChangeColorWhenHovered(brushColorElement.value);
 });
 
 function setGridLayout() {    
-    const dimensions = slider.value*16;
-    gridContainer.setAttribute('style', `grid-template-columns: repeat(${dimensions}, 1fr);`);
+    const columns = sliderElement.value*16;
+    gridContainerElement.setAttribute('style', `grid-template-columns: repeat(${columns}, 1fr);`);
 }
 
-slider.oninput = () => {
-    sliderValueText.textContent = `${slider.value*16}X${slider.value*16}`;
+sliderElement.oninput = () => {
+    sliderElementDisplayValue.textContent = `${sliderElement.value*16}X${sliderElement.value*16}`;
 }
 
-function setGridDimensions(size){    
-    removeAllChildNodes(gridContainer);
+function fillGridContainer(size){    
+    removeAllChildNodes(gridContainerElement);
     for (let i = 0; i < size*size; i++) {
         let element = document.createElement('div');
-        gridContainer.appendChild(element);        
+        gridContainerElement.appendChild(element);        
     }
 }
 
