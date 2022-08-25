@@ -1,14 +1,22 @@
 const gridContainer = document.querySelector('.grid-container');
 const slider = document.querySelector('.grid-dimensions-slider');
 const sliderValueText = document.querySelector('.slider-value');
+let gridElements = document.querySelector('.grid-container').children;
+const brushColorElement = document.querySelector('.brush-color');
 
 sliderValueText.textContent = `${slider.value*16}X${slider.value*16}`;
 setGridDimensions(slider.value*16);
 gridContainer.setAttribute('style', ` grid-template-columns: repeat(16, 1fr);`);
+addEventListenerToChangeColorWhenHovered(brushColorElement.value);
+
+brushColorElement.addEventListener('change', () => {
+    addEventListenerToChangeColorWhenHovered(brushColorElement.value);
+});
 
 slider.addEventListener('change', () => {
     setGridDimensions(slider.value*16);
     setGridLayout();    
+    gridElements = document.querySelector('.grid-container').children;
 });
 
 function setGridLayout() {    
@@ -33,10 +41,11 @@ function removeAllChildNodes(parent) {
         parent.removeChild(parent.firstChild);
     }
 }
-// const gridElements = document.querySelector('.grid-container').children;
 
-// for (let i = 0; i < gridElements.length; i++) {
-//    gridElements[i].addEventListener('mouseover', (e) => {
-//         e.target.style.backgroundColor = 'black';
-//    });    
-// }
+function addEventListenerToChangeColorWhenHovered(color){
+    for (let i = 0; i < gridElements.length; i++) {
+        gridElements[i].addEventListener('mouseover', (e) => {
+             e.target.style.backgroundColor = `${color}`;
+        });    
+    }
+}
