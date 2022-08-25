@@ -1,6 +1,6 @@
 const gridContainer = document.querySelector('.grid-container');
 const slider = document.querySelector('.grid-dimensions-slider');
-const sliderValueText = document.querySelector('.slider-value');
+const sliderValueText = document.querySelector('.slider-current-value');
 let gridElements = document.querySelector('.grid-container').children;
 const brushColorElement = document.querySelector('.brush-color');
 
@@ -17,6 +17,7 @@ slider.addEventListener('change', () => {
     setGridDimensions(slider.value*16);
     setGridLayout();    
     gridElements = document.querySelector('.grid-container').children;
+    addEventListenerToChangeColorWhenHovered(brushColorElement.value);
 });
 
 function setGridLayout() {    
