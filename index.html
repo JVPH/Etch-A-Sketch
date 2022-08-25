@@ -12,9 +12,11 @@
     <h1 class="heading">Etch-A-Sketch</h1>
     <main class="main">
         <div class="settings">
-            <input type="color" class="brush-color" value="#FBC5C5">
-            <input type="range" class="grid-dimensions-slider" min="1" max="5" value="1">
-            <p>Size: <span class="slider-value"></span></p>
+            <input type="color" class="brush-color" autocomplete="off">
+            <div class="slider-container">
+                <input type="range" class="grid-dimensions-slider" min="1" max="3" value="1" autocomplete="off">
+                <p>Size: <span class="slider-value"></span></p>
+            </div>            
         </div>
         <div class="grid-container"></div>        
     </main>   
