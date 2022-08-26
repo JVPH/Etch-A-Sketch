@@ -89,12 +89,12 @@ body {
 
 button{
     background-color: #E9ECEF;
-    border: 1px solid transparent;
+    border: 1px solid #343A40;
     border-radius: .25rem;
     padding: 15px 25px;
     width: 137.3px;
     font-family: inherit;
-    font-size: 1em;
+    font-size: 1.4em;
     color: #343A40;
 }
 
@@ -107,4 +107,13 @@ button:hover {
     display: flex;
     flex-direction: column;
     gap: 30px;
+}
+
+.slider-label {
+    font-size: 1.3em;
+}
+
+.grid-dimensions-slider {
+    margin-bottom: 12px;    
+    transform: scale(1.1);
 }
