@@ -1,12 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&display=swap');
+@font-face {
+    font-family: 'overbyte';
+    src: url('./fonts/overbyte/ccoverbyteoffregular.otf')
+         format('opentype');
+}
 
 body {
-    background-color: #F8F9FA;
+    background-color: #E9ECEF;
     color: #343A40;
     margin: 0;    
     min-height: 100vh;
     display: grid;    
-    font-family: 'DynaPuff', cursive;        
+    font-family: 'overbyte';        
     grid-template-areas:
         'one'
         'two'
@@ -17,6 +21,9 @@ body {
     font-size: 3em;
     text-align: center;
     align-self: center;  
+    text-shadow: -1px -1px 0px #E9ECEF,
+                  3px 3px 0px #E9ECEF,
+                  6px 6px 0px #CED4DA;
 }
 
 .main {  
@@ -36,8 +43,7 @@ body {
 }
 
 .settings {
-    background-color: #ADB5BD;
-    border: thin solid #343A40;
+    background-color: #DEE2E6;
     width: 250px;
     height: 600px;        
     display: flex;
@@ -65,6 +71,7 @@ body {
     padding: 0;
     border: thin solid #343A40;
     height: 3rem;
+    cursor: pointer;
 }
 
 .brush-color:hover {
@@ -95,11 +102,13 @@ button{
     font-family: inherit;
     font-size: 1.4em;
     color: #343A40;
+    cursor: pointer;
 }
 
 button:hover {
     filter: brightness(90%);
     transform: translateY(-1px);
+    
 }
 
 .button-container {
@@ -125,4 +134,8 @@ button:hover {
 
 a {
     text-decoration: none;
+}
+
+.box-shadow {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
