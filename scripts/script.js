@@ -8,9 +8,9 @@ const clearButton = document.querySelector('.clear-button');
 
 // Set starting/default options
 
-sliderElementDisplayValue.textContent = `${sliderElement.value*16}X${sliderElement.value*16}`;
+sliderElementDisplayValue.textContent = `${sliderElement.value}X${sliderElement.value}`;
 
-fillGridContainer(sliderElement.value*16);
+fillGridContainer(sliderElement.value);
 
 gridContainerElement.setAttribute('style', ` grid-template-columns: repeat(16, 1fr);`);
 
@@ -27,18 +27,18 @@ brushColorElement.addEventListener('change', () => {
 });
 
 sliderElement.addEventListener('change', () => {
-    fillGridContainer(sliderElement.value*16);
+    fillGridContainer(sliderElement.value);
     setGridLayout();    
     singleColorMode(brushColorElement.value);
 });
 
 function setGridLayout() {    
-    const columns = sliderElement.value*16;
+    const columns = sliderElement.value;
     gridContainerElement.setAttribute('style', `grid-template-columns: repeat(${columns}, 1fr);`);
 }
 
 sliderElement.oninput = () => {
-    sliderElementDisplayValue.textContent = `${sliderElement.value*16}X${sliderElement.value*16}`;
+    sliderElementDisplayValue.textContent = `${sliderElement.value}X${sliderElement.value}`;
 }
 
 function fillGridContainer(size){    
