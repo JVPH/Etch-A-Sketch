@@ -22,7 +22,7 @@ body {
 .main {  
     display: grid;
     place-content: center;
-    gap: 0 1.5rem;
+    gap: 0 4rem;
     grid-template-areas: 
         'one two two';
 }
@@ -63,7 +63,6 @@ body {
 
 .brush-color {
     padding: 0;
-    /* border-style: none;     */
     border: thin solid #343A40;
     height: 3rem;
 }
@@ -116,4 +115,14 @@ button:hover {
 .grid-dimensions-slider {
     margin-bottom: 12px;    
     transform: scale(1.1);
+}
+
+.github-logo {
+    width: 35px;
+    height: 35px;
+    margin-bottom: -9px;
+}
+
+a {
+    text-decoration: none;
 }
